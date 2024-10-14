@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <!-- Because this makes the begining of our html file so here is all html -->
+  </head>
+  <body>
+    <!-- the container -->
+    <main class="wrapper">
+      <!-- the side bar -->
+      <div class="side-bar">
+        <h2>MENU</h2>
+        <ul>
+          <li class="home">
+            <a href="/" style="text-decoration: none">Home</a>
+          </li>
+          <li calss="about">
+            <a href="/about" style="text-decoration: none">About</a>
+          </li>
+          <li class="contact">
+            <a href="/contact" style="text-decoration: none;">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <!-- The main content  -->
+      <div class="main-content">
+        <div class="container">
+          <ul>
+            <li class="search">WELCOME TO THE BLOG SITE</li>
+            <li class="create">
+              <a href="/create" style="color: green"> CREATE BLOG</a>
+            </li>
+          </ul>
+        </div>
+        <!-- this is the main cotainer for the cards -->
+
+        <div class="blog-cards">
+          <% blogs.forEach(function(blogs) { %>
+          <div class="card">
+            <a
+              href="/blogs/<%= blogs.id %>"
+              style="text-decoration: none; color: inherit"
+            >
+              <h3><%= blogs.title %></h3>
+              <p><%= blogs.exerpt%></p>
+            </a>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
